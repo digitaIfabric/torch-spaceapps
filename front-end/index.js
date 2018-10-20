@@ -16,7 +16,7 @@ function Torch(msg, long, lat, image, time) {
 
 function getUpdates() {
     var torchArr = [];
-    console.log("In get twitter");
+    console.log("torchArr: ",torchArr);
 
     twitter.get('search/tweets', {q: '#nasatorch', count: 2}, function (err, data, response) {
         data.statuses.forEach(tweet => {
@@ -49,4 +49,4 @@ function getUpdates() {
 //For Dev (Actual delay = 1000*60*5)
 // setInterval(test, 5000);
 
-let arr = getUpdates();
+getUpdates();
